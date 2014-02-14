@@ -661,6 +661,11 @@ void MainWindow::openFile() {
         repPage->pageSetting.pageWidth       = repElem.attribute("pageWidth").toInt();
         repPage->pageSetting.pageHeight      = repElem.attribute("pageHeight").toInt();
         repPage->pageSetting.pageOrientation = repElem.attribute("orientation").toInt();
+        repPage->pageSetting.unit            = repElem.attribute("unit").toInt();
+        repPage->pageSetting.unitName        = repElem.attribute("unitName");
+        // fix unit in older reports.
+        if (repPage->pageSetting.unitName.isEmpty())
+                repPage->pageSetting.unit = 40;
         ui->tabWidget->setTabText(ui->tabWidget->currentIndex(), tr("Page %1").arg(ui->tabWidget->currentIndex()+1));
         repPage->setPaperSize();
         //гуляем во всем элементам, родителем которых является корневой
@@ -1010,6 +1015,8 @@ void MainWindow::saveReport() {
         repElem.setAttribute("marginsTop",repPage->pageSetting.marginsTop);
         repElem.setAttribute("marginsBottom",repPage->pageSetting.marginsBottom);
         repElem.setAttribute("orientation",repPage->pageSetting.pageOrientation);
+        repElem.setAttribute("unit",repPage->pageSetting.unit);
+        repElem.setAttribute("unitName",repPage->pageSetting.unitName);
         docElem.appendChild(repElem);
 
         QList<QWidget *> list = repPage->getReportItems();

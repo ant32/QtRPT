@@ -34,6 +34,7 @@ private slots:
 private:
     Ui::LanguageDlg *ui;
     int loadedIndex;
+    int measurementIndex;
 };
 
 #endif // LANGUAGEDLG_H

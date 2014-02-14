@@ -504,7 +504,7 @@ QVariant QtRPT::processFunctions(QString value) {
         return QString::number(totalPage);
     if (value.contains("LineNo"))
         return QString::number(m_recNo+1);
-    return NULL;
+    return QVariant();
 }
 
 QImage QtRPT::sectionFieldImage(QString value) {
@@ -517,7 +517,7 @@ QString QtRPT::sectionValue(QString paramName) {
     paramName.replace("]","");
     //callbackFunc(recNo, paramName, paramValue);
     paramValue = processFunctions(paramName);    
-    if (paramValue == NULL)
+    if (paramValue.isNull())
         emit setValue(m_recNo, paramName, paramValue, m_pageReport);
     return paramValue.toString();
 }
@@ -592,7 +592,15 @@ void QtRPT::setPageSettings(QPrinter *printer, QDomElement docElem) {
     mr = docElem.attribute("marginsRight").toInt();
     mt = docElem.attribute("marginsTop").toInt();
     mb = docElem.attribute("marginsBottom").toInt();
-    printer->setPageMargins(ml/4+0.01, mt/4+0.01, mr/4+0.01, mb/4+0.01, QPrinter::Millimeter);
+    int unit = docElem.attribute("unit").toInt();
+    QString unitName = docElem.attribute("unitName");
+    if (unit == 0) // keep backward compatibility
+        unit = 40;
+    if (unitName == "" || unitName == "cm"){
+        unit /= 10; // convert cm to mm
+        printer->setPageMargins(ml/unit+0.01, mt/unit+0.01, mr/unit+0.01, mb/unit+0.01, QPrinter::Millimeter);
+    }else //inch
+        printer->setPageMargins(ml/unit+0.001, mt/unit+0.001, mr/unit+0.001, mb/unit+0.001, QPrinter::Inch);
 
     int orientation = docElem.attribute("orientation").toInt();
     if (orientation == 1) {

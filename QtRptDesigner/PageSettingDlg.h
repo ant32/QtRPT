@@ -23,6 +23,8 @@ struct PageSetting {
     float pageWidth;
     float pageHeight;
     int pageOrientation;
+    int unit;
+    QString unitName;
 };
 
 class PageSettingDlg : public QDialog
@@ -41,7 +43,7 @@ private:
 
 private slots:
     void changeOrientation();
-
+    void on_sizeCombo_currentIndexChanged(const QString &arg1);
 };
 
 #endif // PAGESETTINGDLG_H

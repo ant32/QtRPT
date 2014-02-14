@@ -21,6 +21,7 @@ LanguageDlg::LanguageDlg(QWidget *parent) :
     settings.setIniCodec("UTF-8");
     settings.beginGroup("language");
     QString language = settings.value("language").toString();
+    QString measurement = settings.value("measurement").toString();
     settings.endGroup();
 //    //loading active languge from qsettings ini file
 //    //default value is not set because i'm reading the system language at start up
@@ -41,6 +42,18 @@ LanguageDlg::LanguageDlg(QWidget *parent) :
         ui->cmbLanguage->setCurrentIndex(4);
 
     loadedIndex = ui->cmbLanguage->currentIndex();
+
+//    // Load
+    if (measurement == "")
+        ui->cmbMeasurement->setCurrentIndex(0);
+
+    else if (measurement == "cm")
+        ui->cmbMeasurement->setCurrentIndex(0);
+
+    else if (measurement == "Inch")
+        ui->cmbMeasurement->setCurrentIndex(1);
+
+    measurementIndex = ui->cmbMeasurement->currentIndex();
 }
 
 LanguageDlg::~LanguageDlg() {
@@ -50,8 +63,8 @@ LanguageDlg::~LanguageDlg() {
 void LanguageDlg::on_btnOk_clicked() {
     QSettings settings(QCoreApplication::applicationDirPath()+"/setting.ini",QSettings::IniFormat);
     settings.setIniCodec("UTF-8");
+    settings.beginGroup("language");
     if (ui->cmbLanguage->currentIndex() != loadedIndex) {
-        settings.beginGroup("language");
         switch(ui->cmbLanguage->currentIndex())
         {
         case 0://system default
@@ -70,9 +83,18 @@ void LanguageDlg::on_btnOk_clicked() {
             settings.setValue("language", "sr_RS@latin");
             break;
         }
-        settings.endGroup();
         QMessageBox::information(this,tr("Message QtRptDesigner"),tr("The language for this application has been changed. The change will take effect the next time the application is started"),QMessageBox::Ok);
     }
+    switch(ui->cmbMeasurement->currentIndex())
+    {
+    case 0://cm
+        settings.setValue("measurement", "cm");
+        break;
+    case 1://inch
+        settings.setValue("measurement", "Inch");
+        break;
+    }
+    settings.endGroup();
     this->close();
 }
 

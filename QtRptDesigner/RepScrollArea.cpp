@@ -16,12 +16,29 @@ RepScrollArea::RepScrollArea(QWidget *parent) :
     ui->repWidget->setObjectName("repWidget");
     repWidget = ui->repWidget;
 
-    pageSetting.marginsLeft     = 40;
-    pageSetting.marginsRight    = 40;
-    pageSetting.marginsTop      = 40;
-    pageSetting.marginsBottom   = 40;
-    pageSetting.pageWidth       = 840;
-    pageSetting.pageHeight      = 1188;
+    // load settings.
+    QSettings settings(QCoreApplication::applicationDirPath()+"/setting.ini",QSettings::IniFormat);
+    settings.setIniCodec("UTF-8");
+    settings.beginGroup("language");
+    QString measurement = settings.value("measurement").toString();
+    settings.endGroup();
+    if (measurement == "cm" || measurement == ""){
+        pageSetting.unit = 40;
+        pageSetting.marginsLeft     = 40;
+        pageSetting.marginsRight    = 40;
+        pageSetting.marginsTop      = 40;
+        pageSetting.marginsBottom   = 40;
+        pageSetting.pageWidth       = 840;
+        pageSetting.pageHeight      = 1188;
+    }else if (measurement == "Inch"){
+        pageSetting.unit = 100;
+        pageSetting.marginsLeft     = 25;
+        pageSetting.marginsRight    = 25;
+        pageSetting.marginsTop      = 25;
+        pageSetting.marginsBottom   = 25;
+        pageSetting.pageWidth       = 850;
+        pageSetting.pageHeight      = 1100;
+    }
     pageSetting.pageOrientation = 0;
 
     this->setMouseTracking(true);
@@ -77,7 +94,7 @@ bool RepScrollArea::allowField() {
 
 void RepScrollArea::paintGrid() {
     if(!isShowGrid) return;
-    int x_=pageSetting.marginsLeft+40;
+    int x_=pageSetting.marginsLeft+pageSetting.unit;
     int y_=pageSetting.marginsTop;
     QPainter painter(ui->repWidget);
     painter.setPen(QColor(240, 240, 240, 255));
@@ -86,18 +103,18 @@ void RepScrollArea::paintGrid() {
                      ui->repWidget->height()-pageSetting.marginsTop-pageSetting.marginsBottom);
 
     while ( x_ < ui->repWidget->width()-pageSetting.marginsRight ) {
-        if (x_/20%2==0) {
+        if (x_/(pageSetting.unit/2)%2==0) {
             //painter.setPen(Qt::DotLine);
         } else {
             //painter.setPen(Qt::SolidLine);
             //painter.setPen(Qt::blue);
         }
         painter.drawLine(x_,pageSetting.marginsTop,x_,ui->repWidget->height()-pageSetting.marginsTop);
-        x_ = x_+40;
+        x_ = x_+pageSetting.unit;
     }
 
     while ( y_ < ui->repWidget->height()-pageSetting.marginsTop ) {
-        if (y_/20%2==0) {
+        if (y_/(pageSetting.unit/2)%2==0) {
             //painter.setPen(Qt::SolidLine);
             //painter.setPen(Qt::blue);
         } else {
@@ -105,7 +122,7 @@ void RepScrollArea::paintGrid() {
         }
         painter.setOpacity(0.5);
         painter.drawLine(pageSetting.marginsLeft,y_,ui->repWidget->width()-pageSetting.marginsRight,y_);
-        y_ = y_+40;
+        y_ = y_+pageSetting.unit;
     }
 }
 
@@ -121,9 +138,9 @@ void RepScrollArea::paintHorRuler() {
     QPainter painter(ui->horRuler);
     int x_=0 ;
     while ( x_ < ui->horRuler->width() ) {
-        x_ = x_+20;
-        if (x_/20%2==0) {
-            const QString rt = QString::number(x_/40);
+        x_ = x_+pageSetting.unit/2;
+        if (x_/(pageSetting.unit/2)%2==0) {
+            const QString rt = QString::number(x_/pageSetting.unit);
             painter.drawText(x_,15,rt);
         } else {
             painter.drawText(x_,15,"-");
@@ -136,9 +153,9 @@ void RepScrollArea::paintVerRuler() {
     int y_ =0 ;
     painter.rotate(-90);
     while ( y_ < ui->verRuler->height() ) {
-        y_ = y_+20;
-        if (y_/20%2==0) {
-            const QString rt = QString::number(y_/40);
+        y_ = y_+pageSetting.unit/2;
+        if (y_/(pageSetting.unit/2)%2==0) {
+            const QString rt = QString::number(y_/pageSetting.unit);
             painter.drawText(-y_,15,rt);
         } else {
             painter.drawText(-y_,15,"-");

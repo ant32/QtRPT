@@ -20,7 +20,7 @@ ExampleDlg3::ExampleDlg3(QWidget *parent) : QDialog(parent), ui(new Ui::ExampleD
     printer->setOutputFormat(QPrinter::PdfFormat);
     printer->setOrientation(QPrinter::Portrait);
     printer->setPaperSize(QPrinter::A4);
-    printer->setFullPage(TRUE);
+    printer->setFullPage(true);
 
     preview = new QPrintPreviewWidget(printer, this);
     ui->widget->layout()->addWidget(preview);
