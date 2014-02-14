@@ -41,7 +41,7 @@ void TContainerField::setMenu(QMenu *menu_) {
     QObject::connect(actContEdit, SIGNAL(triggered()), this, SLOT(edit()));
 
     QAction *actContDel = new QAction(tr("Delete"),this);
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/delete.png")), QIcon::Normal, QIcon::On);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/images/delete.png")), QIcon::Normal, QIcon::On);
     actContDel->setObjectName("actContDel");
     actContDel->setIcon(icon);
     QObject::connect(actContDel, SIGNAL(triggered()), this, SLOT(deleteLater()));

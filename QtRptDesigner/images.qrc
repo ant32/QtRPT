@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/new/prefix1">
+    <qresource prefix="/">
         <file>images/80-1.png</file>
         <file>images/textcenter.png</file>
         <file>images/textjustify.png</file>

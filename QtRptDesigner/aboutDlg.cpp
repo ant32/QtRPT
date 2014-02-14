@@ -24,7 +24,7 @@ AboutDlg::AboutDlg(QWidget *parent) : QDialog(parent) {
     QObject::connect(btnOK, SIGNAL(clicked()), this, SLOT(close()));
 
     QLabel *lab1 = new QLabel(this);
-    lab1->setPixmap(QPixmap(":/new/prefix1/images/MQueryLogo.png"));
+    lab1->setPixmap(QPixmap(":/images/MQueryLogo.png"));
     QString lbl = "<h2><b><p style='color:#0033FF'>"+QApplication::applicationName()+"</p></b></h2>"+
                   tr("Version: ")+QApplication::applicationVersion()+"<br>"+
                   tr("Programmer: Aleksey Osipov")+"<br>"+

@@ -148,7 +148,7 @@ void RepScrollArea::paintVerRuler() {
 
 ReportBand *RepScrollArea::m_addBand(QString bandName, BandType type, int m_height) {
     QTreeWidgetItem *item = new QTreeWidgetItem(rootItem);
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/bands.png")), QIcon::Normal, QIcon::On);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/images/bands.png")), QIcon::Normal, QIcon::On);
     item->setIcon(0,icon);
     item->setText(0,bandName);
     item->setSelected(true);

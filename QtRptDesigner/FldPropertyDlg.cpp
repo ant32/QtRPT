@@ -14,8 +14,8 @@ FldPropertyDlg::FldPropertyDlg(QWidget *parent) : QDialog(parent), ui(new Ui::Fl
 }
 
 QString FldPropertyDlg::showThis(int index) {
-    QIcon iconFolder(QPixmap(QString::fromUtf8(":/new/prefix1/images/folder.png")));
-    QIcon iconVariable(QPixmap(QString::fromUtf8(":/new/prefix1/images/variable.png")));
+    QIcon iconFolder(QPixmap(QString::fromUtf8(":/images/folder.png")));
+    QIcon iconVariable(QPixmap(QString::fromUtf8(":/images/variable.png")));
     ui->stackedWidget->setCurrentIndex(index);
 
     QTreeWidgetItem *rootItem = new QTreeWidgetItem(ui->treeWidget,0);

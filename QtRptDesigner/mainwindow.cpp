@@ -163,7 +163,7 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     for (int i=1; i < 7; i++) {
         QListWidgetItem *item = new QListWidgetItem(listFrameStyle);
         QIcon icn;
-        icn.addPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/fs%1.png").arg(i)), QIcon::Normal, QIcon::On);
+        icn.addPixmap(QPixmap(QString::fromUtf8(":/images/fs%1.png").arg(i)), QIcon::Normal, QIcon::On);
         item->setIcon(icn);
         item->setData(Qt::UserRole,i);
         listFrameStyle->addItem(item);
@@ -173,7 +173,7 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     newContMoving = false;
 
     rootItem = new QTreeWidgetItem(ui->treeWidget,0);
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/report.png")), QIcon::Normal, QIcon::On);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/images/report.png")), QIcon::Normal, QIcon::On);
     rootItem->setIcon(0,icon);
     rootItem->setText(0,tr("Report"));
     rootItem->setExpanded(true);
@@ -268,7 +268,7 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     actRepTitle = new QAction(tr("Report Title"),this);
     actRepTitle->setObjectName("actRepTitle");
     QObject::connect(actRepTitle, SIGNAL(triggered()), this, SLOT(addBand()));
-    //icon.addPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/882-2.png")), QIcon::Normal, QIcon::On);
+    //icon.addPixmap(QPixmap(QString::fromUtf8(":/images/882-2.png")), QIcon::Normal, QIcon::On);
     //createFldAgentAction->setIcon(icon);
 
     actReportSummary = new QAction(tr("Report Summary"),this);
@@ -584,9 +584,9 @@ void MainWindow::newFeildTreeItem(TContainerField *contField, ReportBand *widget
     QTreeWidgetItem *item = new QTreeWidgetItem(widget->itemInTree);
     contField->itemInTree = item;
     if (contField->type == Text || contField->type == TextImage)
-        icon.addPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/field.png")), QIcon::Normal, QIcon::On);
+        icon.addPixmap(QPixmap(QString::fromUtf8(":/images/field.png")), QIcon::Normal, QIcon::On);
     if (contField->type == Image)
-        icon.addPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/picture.png")), QIcon::Normal, QIcon::On);
+        icon.addPixmap(QPixmap(QString::fromUtf8(":/images/picture.png")), QIcon::Normal, QIcon::On);
     item->setIcon(0,icon);
     item->setText(0,contField->objectName());
     item->setSelected(true);
@@ -1881,7 +1881,7 @@ bool MainWindow::eventFilter(QObject *obj, QEvent *e) {
 void MainWindow::AddPicture() {
     addField();
     newContField->setText(tr("New image"));
-    newContField->setImage(QPixmap(QString::fromUtf8(":/new/prefix1/images/picture.png")));
+    newContField->setImage(QPixmap(QString::fromUtf8(":/images/picture.png")));
     newContField->type = Image;
     newContField->setStyleSheet("/**/");
 }

@@ -25,9 +25,9 @@ void PageSettingDlg::showThis(PageSetting pageSetting) {
     if (pageSetting.pageOrientation == 0) ui->rPortrait->setChecked(true);
     if (pageSetting.pageOrientation == 1) ui->rLandscape->setChecked(true);
     if (ui->rLandscape->isChecked())
-        ui->lblOrientation->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/landscape.png")));
+        ui->lblOrientation->setPixmap(QPixmap(QString::fromUtf8(":/images/landscape.png")));
     if (ui->rPortrait->isChecked())
-        ui->lblOrientation->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/portrait.png")));
+        ui->lblOrientation->setPixmap(QPixmap(QString::fromUtf8(":/images/portrait.png")));
     if (exec() == QDialog::Accepted) {
         saveSettings();
     }
@@ -38,9 +38,9 @@ void PageSettingDlg::changeOrientation() {
     ui->edtHeight->setText(ui->edtWidth->text());
     ui->edtWidth->setText(str);
     if (ui->rLandscape->isChecked())
-        ui->lblOrientation->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/landscape.png")));
+        ui->lblOrientation->setPixmap(QPixmap(QString::fromUtf8(":/images/landscape.png")));
     if (ui->rPortrait->isChecked())
-        ui->lblOrientation->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/portrait.png")));
+        ui->lblOrientation->setPixmap(QPixmap(QString::fromUtf8(":/images/portrait.png")));
 }
 
 void PageSettingDlg::saveSettings() {

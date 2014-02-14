@@ -86,7 +86,7 @@
                 </property>
                 <property name="icon">
                  <iconset resource="images.qrc">
-                  <normaloff>:/new/prefix1/images/variable.png</normaloff>:/new/prefix1/images/variable.png</iconset>
+                  <normaloff>:/images/variable.png</normaloff>:/images/variable.png</iconset>
                 </property>
                </widget>
               </item>
@@ -103,7 +103,7 @@
                 </property>
                 <property name="icon">
                  <iconset resource="images.qrc">
-                  <normaloff>:/new/prefix1/images/function.png</normaloff>:/new/prefix1/images/function.png</iconset>
+                  <normaloff>:/images/function.png</normaloff>:/images/function.png</iconset>
                 </property>
                </widget>
               </item>
@@ -120,7 +120,7 @@
                 </property>
                 <property name="icon">
                  <iconset resource="images.qrc">
-                  <normaloff>:/new/prefix1/images/formating.png</normaloff>:/new/prefix1/images/formating.png</iconset>
+                  <normaloff>:/images/formating.png</normaloff>:/images/formating.png</iconset>
                 </property>
                </widget>
               </item>
@@ -382,7 +382,7 @@
             </property>
             <property name="icon">
              <iconset resource="images.qrc">
-              <normaloff>:/new/prefix1/images/open.png</normaloff>:/new/prefix1/images/open.png</iconset>
+              <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
             </property>
             <property name="autoRaise">
              <bool>true</bool>
@@ -438,7 +438,7 @@
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap resource="images.qrc">:/new/prefix1/images/picture.png</pixmap>
+              <pixmap resource="images.qrc">:/images/picture.png</pixmap>
              </property>
             </widget>
            </item>

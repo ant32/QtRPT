@@ -296,7 +296,7 @@
   <action name="actPageSettings">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/pageSetting.png</normaloff>:/new/prefix1/images/pageSetting.png</iconset>
+     <normaloff>:/images/pageSetting.png</normaloff>:/images/pageSetting.png</iconset>
    </property>
    <property name="text">
     <string>Page settings</string>
@@ -308,7 +308,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/80-1.png</normaloff>:/new/prefix1/images/80-1.png</iconset>
+     <normaloff>:/images/80-1.png</normaloff>:/images/80-1.png</iconset>
    </property>
    <property name="text">
     <string>Select tool</string>
@@ -323,7 +323,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textleft.png</normaloff>:/new/prefix1/images/textleft.png</iconset>
+     <normaloff>:/images/textleft.png</normaloff>:/images/textleft.png</iconset>
    </property>
    <property name="text">
     <string>Align left</string>
@@ -338,7 +338,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textcenter.png</normaloff>:/new/prefix1/images/textcenter.png</iconset>
+     <normaloff>:/images/textcenter.png</normaloff>:/images/textcenter.png</iconset>
    </property>
    <property name="text">
     <string>Align center</string>
@@ -353,7 +353,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textright.png</normaloff>:/new/prefix1/images/textright.png</iconset>
+     <normaloff>:/images/textright.png</normaloff>:/images/textright.png</iconset>
    </property>
    <property name="text">
     <string>Align right</string>
@@ -368,7 +368,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textjustify.png</normaloff>:/new/prefix1/images/textjustify.png</iconset>
+     <normaloff>:/images/textjustify.png</normaloff>:/images/textjustify.png</iconset>
    </property>
    <property name="text">
     <string>Justify</string>
@@ -383,7 +383,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textbold.png</normaloff>:/new/prefix1/images/textbold.png</iconset>
+     <normaloff>:/images/textbold.png</normaloff>:/images/textbold.png</iconset>
    </property>
    <property name="text">
     <string>Bold</string>
@@ -398,7 +398,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textitalic.png</normaloff>:/new/prefix1/images/textitalic.png</iconset>
+     <normaloff>:/images/textitalic.png</normaloff>:/images/textitalic.png</iconset>
    </property>
    <property name="text">
     <string>Italic</string>
@@ -413,7 +413,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textunder.png</normaloff>:/new/prefix1/images/textunder.png</iconset>
+     <normaloff>:/images/textunder.png</normaloff>:/images/textunder.png</iconset>
    </property>
    <property name="text">
     <string>Underline</string>
@@ -428,7 +428,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/82-6.png</normaloff>:/new/prefix1/images/82-6.png</iconset>
+     <normaloff>:/images/82-6.png</normaloff>:/images/82-6.png</iconset>
    </property>
    <property name="text">
     <string>Top line</string>
@@ -443,7 +443,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/82-7.png</normaloff>:/new/prefix1/images/82-7.png</iconset>
+     <normaloff>:/images/82-7.png</normaloff>:/images/82-7.png</iconset>
    </property>
    <property name="text">
     <string>Bottom line</string>
@@ -458,7 +458,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/82-4.png</normaloff>:/new/prefix1/images/82-4.png</iconset>
+     <normaloff>:/images/82-4.png</normaloff>:/images/82-4.png</iconset>
    </property>
    <property name="text">
     <string>Left line</string>
@@ -473,7 +473,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/82-5.png</normaloff>:/new/prefix1/images/82-5.png</iconset>
+     <normaloff>:/images/82-5.png</normaloff>:/images/82-5.png</iconset>
    </property>
    <property name="text">
     <string>Right line</string>
@@ -488,7 +488,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/82-2.png</normaloff>:/new/prefix1/images/82-2.png</iconset>
+     <normaloff>:/images/82-2.png</normaloff>:/images/82-2.png</iconset>
    </property>
    <property name="text">
     <string>All frame line</string>
@@ -503,7 +503,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/82-1.png</normaloff>:/new/prefix1/images/82-1.png</iconset>
+     <normaloff>:/images/82-1.png</normaloff>:/images/82-1.png</iconset>
    </property>
    <property name="text">
     <string>No frame</string>
@@ -518,7 +518,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/band.png</normaloff>:/new/prefix1/images/band.png</iconset>
+     <normaloff>:/images/band.png</normaloff>:/images/band.png</iconset>
    </property>
    <property name="text">
     <string>Insert band</string>
@@ -536,7 +536,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/field.png</normaloff>:/new/prefix1/images/field.png</iconset>
+     <normaloff>:/images/field.png</normaloff>:/images/field.png</iconset>
    </property>
    <property name="text">
     <string>Add Filed</string>
@@ -548,7 +548,7 @@
   <action name="actionNewReport">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/new.png</normaloff>:/new/prefix1/images/new.png</iconset>
+     <normaloff>:/images/new.png</normaloff>:/images/new.png</iconset>
    </property>
    <property name="text">
     <string>New report</string>
@@ -560,7 +560,7 @@
   <action name="actionOpenReport">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/open.png</normaloff>:/new/prefix1/images/open.png</iconset>
+     <normaloff>:/images/open.png</normaloff>:/images/open.png</iconset>
    </property>
    <property name="text">
     <string>Open report</string>
@@ -578,7 +578,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/save.png</normaloff>:/new/prefix1/images/save.png</iconset>
+     <normaloff>:/images/save.png</normaloff>:/images/save.png</iconset>
    </property>
    <property name="text">
     <string>Save report</string>
@@ -596,7 +596,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/texttop.png</normaloff>:/new/prefix1/images/texttop.png</iconset>
+     <normaloff>:/images/texttop.png</normaloff>:/images/texttop.png</iconset>
    </property>
    <property name="text">
     <string>Align top</string>
@@ -611,7 +611,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textVcenter.png</normaloff>:/new/prefix1/images/textVcenter.png</iconset>
+     <normaloff>:/images/textVcenter.png</normaloff>:/images/textVcenter.png</iconset>
    </property>
    <property name="text">
     <string>Align V center</string>
@@ -626,7 +626,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/textbottom.png</normaloff>:/new/prefix1/images/textbottom.png</iconset>
+     <normaloff>:/images/textbottom.png</normaloff>:/images/textbottom.png</iconset>
    </property>
    <property name="text">
     <string>Align bottom</string>
@@ -638,7 +638,7 @@
   <action name="actCopy">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/copy.png</normaloff>:/new/prefix1/images/copy.png</iconset>
+     <normaloff>:/images/copy.png</normaloff>:/images/copy.png</iconset>
    </property>
    <property name="text">
     <string>Copy</string>
@@ -653,7 +653,7 @@
   <action name="actCut">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/cut.png</normaloff>:/new/prefix1/images/cut.png</iconset>
+     <normaloff>:/images/cut.png</normaloff>:/images/cut.png</iconset>
    </property>
    <property name="text">
     <string>Cut</string>
@@ -671,7 +671,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/paste.png</normaloff>:/new/prefix1/images/paste.png</iconset>
+     <normaloff>:/images/paste.png</normaloff>:/images/paste.png</iconset>
    </property>
    <property name="text">
     <string>Paste</string>
@@ -686,7 +686,7 @@
   <action name="actSaveAs">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/saveAll.png</normaloff>:/new/prefix1/images/saveAll.png</iconset>
+     <normaloff>:/images/saveAll.png</normaloff>:/images/saveAll.png</iconset>
    </property>
    <property name="text">
     <string>Save as</string>
@@ -698,7 +698,7 @@
   <action name="actFontColor">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fontColor.png</normaloff>:/new/prefix1/images/fontColor.png</iconset>
+     <normaloff>:/images/fontColor.png</normaloff>:/images/fontColor.png</iconset>
    </property>
    <property name="text">
     <string>Font color</string>
@@ -710,7 +710,7 @@
   <action name="actBackgroundColor">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/backgroundColor.png</normaloff>:/new/prefix1/images/backgroundColor.png</iconset>
+     <normaloff>:/images/backgroundColor.png</normaloff>:/images/backgroundColor.png</iconset>
    </property>
    <property name="text">
     <string>Background color</string>
@@ -722,7 +722,7 @@
   <action name="actBorderColor">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/borderColor.png</normaloff>:/new/prefix1/images/borderColor.png</iconset>
+     <normaloff>:/images/borderColor.png</normaloff>:/images/borderColor.png</iconset>
    </property>
    <property name="text">
     <string>Border color</string>
@@ -742,7 +742,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/grid.png</normaloff>:/new/prefix1/images/grid.png</iconset>
+     <normaloff>:/images/grid.png</normaloff>:/images/grid.png</iconset>
    </property>
    <property name="text">
     <string>Show Grid</string>
@@ -757,7 +757,7 @@
    </property>
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/picture.png</normaloff>:/new/prefix1/images/picture.png</iconset>
+     <normaloff>:/images/picture.png</normaloff>:/images/picture.png</iconset>
    </property>
    <property name="text">
     <string>Add picture</string>
@@ -766,7 +766,7 @@
   <action name="actFrameStyle">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/frameStyle.png</normaloff>:/new/prefix1/images/frameStyle.png</iconset>
+     <normaloff>:/images/frameStyle.png</normaloff>:/images/frameStyle.png</iconset>
    </property>
    <property name="text">
     <string>Frame style</string>
@@ -778,7 +778,7 @@
   <action name="actLanguage">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/applications-education-language.png</normaloff>:/new/prefix1/images/applications-education-language.png</iconset>
+     <normaloff>:/images/applications-education-language.png</normaloff>:/images/applications-education-language.png</iconset>
    </property>
    <property name="text">
     <string>Language</string>
@@ -790,7 +790,7 @@
   <action name="actNewReportPage">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/newPageReport.png</normaloff>:/new/prefix1/images/newPageReport.png</iconset>
+     <normaloff>:/images/newPageReport.png</normaloff>:/images/newPageReport.png</iconset>
    </property>
    <property name="text">
     <string>New Report Page</string>
@@ -802,7 +802,7 @@
   <action name="actDeleteReportPage">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/deletePage.png</normaloff>:/new/prefix1/images/deletePage.png</iconset>
+     <normaloff>:/images/deletePage.png</normaloff>:/images/deletePage.png</iconset>
    </property>
    <property name="text">
     <string>Delete Report Page</string>
@@ -814,7 +814,7 @@
   <action name="actFieldLeft">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fieldLeft.png</normaloff>:/new/prefix1/images/fieldLeft.png</iconset>
+     <normaloff>:/images/fieldLeft.png</normaloff>:/images/fieldLeft.png</iconset>
    </property>
    <property name="text">
     <string>Align Field Left</string>
@@ -826,7 +826,7 @@
   <action name="actFieldMiddle">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fieldMiddle.png</normaloff>:/new/prefix1/images/fieldMiddle.png</iconset>
+     <normaloff>:/images/fieldMiddle.png</normaloff>:/images/fieldMiddle.png</iconset>
    </property>
    <property name="text">
     <string>Align Field Middle</string>
@@ -838,7 +838,7 @@
   <action name="actFieldRight">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fieldRight.png</normaloff>:/new/prefix1/images/fieldRight.png</iconset>
+     <normaloff>:/images/fieldRight.png</normaloff>:/images/fieldRight.png</iconset>
    </property>
    <property name="text">
     <string>Align Field Right</string>
@@ -850,7 +850,7 @@
   <action name="actFieldTop">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fieldTop.png</normaloff>:/new/prefix1/images/fieldTop.png</iconset>
+     <normaloff>:/images/fieldTop.png</normaloff>:/images/fieldTop.png</iconset>
    </property>
    <property name="text">
     <string>Align Field Top</string>
@@ -862,7 +862,7 @@
   <action name="actFieldCenter">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fieldCenter.png</normaloff>:/new/prefix1/images/fieldCenter.png</iconset>
+     <normaloff>:/images/fieldCenter.png</normaloff>:/images/fieldCenter.png</iconset>
    </property>
    <property name="text">
     <string>Align Field Center</string>
@@ -874,7 +874,7 @@
   <action name="actFieldBottom">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fieldBottom.png</normaloff>:/new/prefix1/images/fieldBottom.png</iconset>
+     <normaloff>:/images/fieldBottom.png</normaloff>:/images/fieldBottom.png</iconset>
    </property>
    <property name="text">
     <string>Align Field Bottom</string>
@@ -886,7 +886,7 @@
   <action name="actFieldSameWidth">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fieldSameWidth.png</normaloff>:/new/prefix1/images/fieldSameWidth.png</iconset>
+     <normaloff>:/images/fieldSameWidth.png</normaloff>:/images/fieldSameWidth.png</iconset>
    </property>
    <property name="text">
     <string>Field Same Width</string>
@@ -898,7 +898,7 @@
   <action name="actFieldSameHeight">
    <property name="icon">
     <iconset resource="images.qrc">
-     <normaloff>:/new/prefix1/images/fieldSameHeight.png</normaloff>:/new/prefix1/images/fieldSameHeight.png</iconset>
+     <normaloff>:/images/fieldSameHeight.png</normaloff>:/images/fieldSameHeight.png</iconset>
    </property>
    <property name="text">
     <string>Field Same Height</string>

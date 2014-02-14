@@ -80,7 +80,7 @@ ReportBand::ReportBand(QWidget *parent, BandType type, QTreeWidgetItem *item) : 
 void ReportBand::setMenu(QMenu *menu_) {
     QIcon icon;
     QAction *actBandDel = new QAction(tr("Delete"),this);
-    icon.addPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/images/delete.png")), QIcon::Normal, QIcon::On);
+    icon.addPixmap(QPixmap(QString::fromUtf8(":/images/delete.png")), QIcon::Normal, QIcon::On);
     actBandDel->setObjectName("actBandDel");
     actBandDel->setIcon(icon);
     QObject::connect(actBandDel, SIGNAL(triggered()), this, SLOT(deleteLater()));
