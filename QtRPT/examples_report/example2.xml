@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Reports email="aliks-os@yandex.ru" programmer="Aleksey Osipov" lib="QtRPT">
+     <Report marginsLeft="40" pageCaption="" pageWidth="840" marginsBottom="40" marginsTop="40" pageHeight="1188" marginsRight="40" pageNo="1" orientation="0">
+          <ReportBand width="760" left="40" height="30" type="MasterData" name="MasterDataBand" top="97">
+               <TContainerField fontBold="0" fontItalic="0" borderLeft="rgba(255,255,255,0)" fontFamily="MS Shell Dlg 2" fontUnderline="0" name="field2" fontColor="rgba(0,0,0,255)" borderBottom="rgba(255,255,255,0)" backgroundColor="rgba(255,255,255,0)" value="[value]" borderColor="rgba(0,0,0,255)" width="749" aligmentH="hLeft" top="0" borderTop="rgba(255,255,255,0)" borderWidth="1px" borderStyle="solid" fontSize="8" height="30" type="label" borderRight="rgba(255,255,255,0)" left="0" aligmentV="vCenter"/>
+          </ReportBand>
+          <ReportBand width="760" left="40" height="38" type="ReportTitle" name="RepTitleBand" top="40">
+               <TContainerField fontBold="1" fontItalic="0" borderLeft="rgba(255,255,255,0)" fontFamily="MS Shell Dlg 2" fontUnderline="0" name="field1" fontColor="rgba(0,0,0,255)" borderBottom="rgba(255,255,255,0)" backgroundColor="rgba(255,255,255,0)" value="First datasource" borderColor="rgba(0,0,0,255)" width="753" aligmentH="hCenter" top="4" borderTop="rgba(255,255,255,0)" borderWidth="1px" borderStyle="solid" fontSize="14" height="29" type="label" borderRight="rgba(255,255,255,0)" left="3" aligmentV="vCenter"/>
+          </ReportBand>
+     </Report>
+     <Report marginsLeft="40" pageCaption="" pageWidth="840" marginsBottom="40" marginsTop="40" pageHeight="1188" marginsRight="40" pageNo="2" orientation="0">
+          <ReportBand width="760" left="40" height="40" type="ReportTitle" name="RepTitleBand" top="40">
+               <TContainerField fontBold="1" fontItalic="0" borderLeft="rgba(255,255,255,0)" fontFamily="MS Shell Dlg 2" fontUnderline="0" name="field3" fontColor="rgba(0,0,0,255)" borderBottom="rgba(255,255,255,0)" backgroundColor="rgba(255,255,255,0)" value="Second datasource" borderColor="rgba(0,0,0,255)" width="754" aligmentH="hCenter" top="4" borderTop="rgba(255,255,255,0)" borderWidth="1px" borderStyle="solid" fontSize="14" height="30" type="label" borderRight="rgba(255,255,255,0)" left="3" aligmentV="vCenter"/>
+          </ReportBand>
+          <ReportBand width="760" left="40" height="30" type="MasterData" name="MasterDataBand" top="99">
+               <TContainerField fontBold="0" fontItalic="0" borderLeft="rgba(255,255,255,0)" fontFamily="MS Shell Dlg 2" fontUnderline="0" name="field4" fontColor="rgba(0,0,0,255)" borderBottom="rgba(255,255,255,0)" backgroundColor="rgba(255,255,255,0)" value="[value]" borderColor="rgba(0,0,0,255)" width="758" aligmentH="hLeft" top="0" borderTop="rgba(255,255,255,0)" borderWidth="1px" borderStyle="solid" fontSize="8" height="30" type="label" borderRight="rgba(255,255,255,0)" left="0" aligmentV="vCenter"/>
+          </ReportBand>
+     </Report>
+</Reports>
