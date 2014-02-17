@@ -9,18 +9,11 @@ e-mail: aliks-os@yandex.ru
 #ifndef QTRPT_H
 #define QTRPT_H
 
-#ifdef HAVE_QT5
-    #include <QDomDocument>
-    #include <QtWidgets/QWidget>
-    #include <QtPrintSupport>
-    #include <QtScript>
-#else
-    #include <QtGui>
-    #include <QtScript>
-    #include <QtXml/QDomDocument>
-#endif
-
-
+class QWidget;
+#include <QPainter>
+#include <QDomDocument>
+#include <QScriptEngine>
+#include <QPrintPreviewWidget>
 
 enum BandType {
     ReportTitle,

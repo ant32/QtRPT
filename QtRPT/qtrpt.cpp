@@ -7,7 +7,12 @@ e-mail: aliks-os@yandex.ru
 */
 
 #include "qtrpt.h"
-#include "qprintpreviewwidget.h"
+#include <QApplication>
+#include <QAction>
+#include <QTime>
+#include <QFile>
+#include <QPrintPreviewDialog>
+#include <QDesktopWidget>
 
 QtRPT::QtRPT(QWidget *parent) : QWidget(parent) {
     xmlDoc = new QDomDocument("Reports");
