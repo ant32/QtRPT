@@ -110,7 +110,7 @@ signals:
     void setValueImage(int &recNo, QString &paramName, QImage &paramValue, int reportPage);
 
 public slots:
-    void printPreview(QPrinter *printer);
+    void drawReport(QPrinter *printer);
 
 };
 

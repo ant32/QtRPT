@@ -544,7 +544,7 @@ void QtRPT::printExec() {
 #ifndef QT_NO_PRINTER
     QPrinter printer(QPrinter::HighResolution);
     QPrintPreviewDialog preview(&printer, this, Qt::Window);
-    connect(&preview, SIGNAL(paintRequested(QPrinter*)), SLOT(printPreview(QPrinter*)));
+    connect(&preview, SIGNAL(paintRequested(QPrinter*)), SLOT(drawReport(QPrinter*)));
     //preview.setWindowState(Qt::WindowMaximized); //Qt BUG https://bugreports.qt-project.org/browse/QTBUG-14517
     QRect geom = QApplication::desktop()->availableGeometry();
     geom.setTop(30);
@@ -561,7 +561,7 @@ void QtRPT::printExec() {
 #endif
 }
 
-void QtRPT::printPreview(QPrinter *printer) {
+void QtRPT::drawReport(QPrinter *printer) {
 #ifdef QT_NO_PRINTER
     Q_UNUSED(printer);
 #else
