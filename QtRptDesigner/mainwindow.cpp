@@ -1043,12 +1043,15 @@ void MainWindow::saveReport() {
         fileName = QFileDialog::getSaveFileName(this, tr("Save File"), "", tr("XML Files (*.xml)"));
     if (fileName.isEmpty() || fileName.isNull() ) return;
     QFile file(fileName);
-    setCurrentFile(fileName);
-    file.open(QIODevice::WriteOnly);
-    QTextStream stream(&file);
-    xmlDoc->save(stream, 5, QDomNode::EncodingFromTextStream);
-    file.close();
-    ui->actSaveReport->setEnabled(false);
+    if (file.open(QIODevice::WriteOnly)){
+        setCurrentFile(fileName);
+        QTextStream stream(&file);
+        xmlDoc->save(stream, 2, QDomNode::EncodingFromTextStream);
+        file.close();
+        ui->actSaveReport->setEnabled(false);
+    } else {
+        QMessageBox::warning(this, tr("Error"), file.errorString());
+    }
 }
 
 bool MainWindow::setXMLProperty(QDomElement *repElem, QWidget *widget) {
