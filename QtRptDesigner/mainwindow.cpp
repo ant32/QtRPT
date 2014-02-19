@@ -18,8 +18,8 @@ e-mail: aliks-os@yandex.ru
 #include <QMouseEvent>
 
 EditorDelegate::EditorDelegate(QObject *parent) : QItemDelegate(parent) {
-    QObject::connect(this, SIGNAL(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)),
-                     this, SLOT(editorClose_(QWidget *, QAbstractItemDelegate::EndEditHint)));
+    connect(this, SIGNAL(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)),
+            this, SLOT(editorClose_(QWidget *, QAbstractItemDelegate::EndEditHint)));
 }
 
 void EditorDelegate::editorClose_(QWidget *editor, QAbstractItemDelegate::EndEditHint hint) {
@@ -120,7 +120,7 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     ui->treeWidget->setFocusPolicy(Qt::NoFocus);
 
     EditorDelegate *d = new EditorDelegate(this);
-    QObject::connect(d, SIGNAL(editorClose(QItemDelegate *)), this,  SLOT(closeEditor()));
+    connect(d, SIGNAL(editorClose(QItemDelegate *)), this,  SLOT(closeEditor()));
     ui->treeParams->setItemDelegate(d);
 
     cbFontName = new QFontComboBox(ui->toolBar);
@@ -159,14 +159,14 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     cbFrameWidth->addItem("4");
     cbFrameWidth->addItem("5");
     ui->toolBar->addWidget(cbFrameWidth);
-    QObject::connect(cbFrameWidth, SIGNAL(activated(int)), this, SLOT(changeFrameWidth()));
-    QObject::connect(cbFontName, SIGNAL(activated(int)), this, SLOT(changeTextFont()));
-    QObject::connect(cbFontSize, SIGNAL(activated(int)), this, SLOT(changeTextFont()));
+    connect(cbFrameWidth, SIGNAL(activated(int)), this, SLOT(changeFrameWidth()));
+    connect(cbFontName, SIGNAL(activated(int)), this, SLOT(changeTextFont()));
+    connect(cbFontSize, SIGNAL(activated(int)), this, SLOT(changeTextFont()));
 
     listFrameStyle = new QListWidget(this);
     listFrameStyle->setFixedHeight(116);
     listFrameStyle->setIconSize(QSize(85, 16));
-    QObject::connect(listFrameStyle, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(setFrameStyle(QListWidgetItem *)));
+    connect(listFrameStyle, SIGNAL(itemClicked(QListWidgetItem *)), this, SLOT(setFrameStyle(QListWidgetItem *)));
 
     for (int i=1; i < 7; i++) {
         QListWidgetItem *item = new QListWidgetItem(listFrameStyle);
@@ -227,81 +227,81 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     updateRecentFileActions();
     ui->menuFile->insertAction(ui->actionExit,separatorAct);
 
-    QObject::connect(ui->actAddField, SIGNAL(triggered()), this, SLOT(addField()));
-    QObject::connect(ui->actAddPicture, SIGNAL(triggered()), this, SLOT(AddPicture()));
-    QObject::connect(ui->actionOpenReport, SIGNAL(triggered()), this, SLOT(openFile()));
-    QObject::connect(ui->actionNewReport, SIGNAL(triggered()), this, SLOT(newReport()));
-    QObject::connect(ui->actSaveReport, SIGNAL(triggered()), this, SLOT(saveReport()));
-    QObject::connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(closeProgram()));
-    QObject::connect(ui->actSaveAs, SIGNAL(triggered()), this, SLOT(saveReport()));
-    QObject::connect(ui->actAlignCenter, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actAlignLeft, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actAlignRight, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actAlignJustify, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actAlignTop, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actAlignVCenter, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actAlignBottom, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actionBold, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actionItalic, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actionUnderline, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actLineAll, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actLineBottom, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actLineLeft, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actLineNo, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actLineRight, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actLineTop, SIGNAL(triggered()), this, SLOT(changeTextFont()));
-    QObject::connect(ui->actCut, SIGNAL(triggered()), this, SLOT(clipBoard()));
-    QObject::connect(ui->actCopy, SIGNAL(triggered()), this, SLOT(clipBoard()));
-    QObject::connect(ui->actPaste, SIGNAL(triggered()), this, SLOT(clipBoard()));
-    QObject::connect(ui->actBackgroundColor, SIGNAL(triggered()), this, SLOT(chooseColor()));
-    QObject::connect(ui->actBorderColor, SIGNAL(triggered()), this, SLOT(chooseColor()));
-    QObject::connect(ui->actFontColor, SIGNAL(triggered()), this, SLOT(chooseColor()));    
-    QObject::connect(ui->actLanguage, SIGNAL(triggered()), this, SLOT(showLanguage()));
-    QObject::connect(ui->actAbout, SIGNAL(triggered()), this, SLOT(showAbout()));
-    QObject::connect(ui->actNewReportPage, SIGNAL(triggered()), this, SLOT(newReportPage()));
-    QObject::connect(ui->actDeleteReportPage, SIGNAL(triggered()), this, SLOT(deleteReportPage()));
-    //QObject::connect(ui->actFrameStyle, SIGNAL(triggered()), this, SLOT(showFrameStyle()));
-    QObject::connect(ui->treeWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(selTree(QTreeWidgetItem *, int)));
-    QObject::connect(ui->treeParams, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(itemChanged(QTreeWidgetItem *, int)));
-    QObject::connect(ui->tabWidget, SIGNAL(currentChanged(int)), this, SLOT(reportPageChanged(int)));
-    QObject::connect(ui->actFieldBottom, SIGNAL(triggered()), this, SLOT(alignFields()));
-    QObject::connect(ui->actFieldCenter, SIGNAL(triggered()), this, SLOT(alignFields()));
-    QObject::connect(ui->actFieldLeft, SIGNAL(triggered()), this, SLOT(alignFields()));
-    QObject::connect(ui->actFieldMiddle, SIGNAL(triggered()), this, SLOT(alignFields()));
-    QObject::connect(ui->actFieldRight, SIGNAL(triggered()), this, SLOT(alignFields()));
-    QObject::connect(ui->actFieldTop, SIGNAL(triggered()), this, SLOT(alignFields()));
-    QObject::connect(ui->actFieldSameHeight, SIGNAL(triggered()), this, SLOT(alignFields()));
-    QObject::connect(ui->actFieldSameWidth, SIGNAL(triggered()), this, SLOT(alignFields()));
+    connect(ui->actAddField, SIGNAL(triggered()), this, SLOT(addField()));
+    connect(ui->actAddPicture, SIGNAL(triggered()), this, SLOT(AddPicture()));
+    connect(ui->actionOpenReport, SIGNAL(triggered()), this, SLOT(openFile()));
+    connect(ui->actionNewReport, SIGNAL(triggered()), this, SLOT(newReport()));
+    connect(ui->actSaveReport, SIGNAL(triggered()), this, SLOT(saveReport()));
+    connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(closeProgram()));
+    connect(ui->actSaveAs, SIGNAL(triggered()), this, SLOT(saveReport()));
+    connect(ui->actAlignCenter, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actAlignLeft, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actAlignRight, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actAlignJustify, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actAlignTop, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actAlignVCenter, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actAlignBottom, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actionBold, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actionItalic, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actionUnderline, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actLineAll, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actLineBottom, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actLineLeft, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actLineNo, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actLineRight, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actLineTop, SIGNAL(triggered()), this, SLOT(changeTextFont()));
+    connect(ui->actCut, SIGNAL(triggered()), this, SLOT(clipBoard()));
+    connect(ui->actCopy, SIGNAL(triggered()), this, SLOT(clipBoard()));
+    connect(ui->actPaste, SIGNAL(triggered()), this, SLOT(clipBoard()));
+    connect(ui->actBackgroundColor, SIGNAL(triggered()), this, SLOT(chooseColor()));
+    connect(ui->actBorderColor, SIGNAL(triggered()), this, SLOT(chooseColor()));
+    connect(ui->actFontColor, SIGNAL(triggered()), this, SLOT(chooseColor()));
+    connect(ui->actLanguage, SIGNAL(triggered()), this, SLOT(showLanguage()));
+    connect(ui->actAbout, SIGNAL(triggered()), this, SLOT(showAbout()));
+    connect(ui->actNewReportPage, SIGNAL(triggered()), this, SLOT(newReportPage()));
+    connect(ui->actDeleteReportPage, SIGNAL(triggered()), this, SLOT(deleteReportPage()));
+    //connect(ui->actFrameStyle, SIGNAL(triggered()), this, SLOT(showFrameStyle()));
+    connect(ui->treeWidget, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(selTree(QTreeWidgetItem *, int)));
+    connect(ui->treeParams, SIGNAL(itemClicked(QTreeWidgetItem *, int)), this, SLOT(itemChanged(QTreeWidgetItem *, int)));
+    connect(ui->tabWidget, SIGNAL(currentChanged(int)), this, SLOT(reportPageChanged(int)));
+    connect(ui->actFieldBottom, SIGNAL(triggered()), this, SLOT(alignFields()));
+    connect(ui->actFieldCenter, SIGNAL(triggered()), this, SLOT(alignFields()));
+    connect(ui->actFieldLeft, SIGNAL(triggered()), this, SLOT(alignFields()));
+    connect(ui->actFieldMiddle, SIGNAL(triggered()), this, SLOT(alignFields()));
+    connect(ui->actFieldRight, SIGNAL(triggered()), this, SLOT(alignFields()));
+    connect(ui->actFieldTop, SIGNAL(triggered()), this, SLOT(alignFields()));
+    connect(ui->actFieldSameHeight, SIGNAL(triggered()), this, SLOT(alignFields()));
+    connect(ui->actFieldSameWidth, SIGNAL(triggered()), this, SLOT(alignFields()));
 
     actRepTitle = new QAction(tr("Report Title"),this);
     actRepTitle->setObjectName("actRepTitle");
-    QObject::connect(actRepTitle, SIGNAL(triggered()), this, SLOT(addBand()));
+    connect(actRepTitle, SIGNAL(triggered()), this, SLOT(addBand()));
     //icon.addPixmap(QPixmap(QString::fromUtf8(":/images/882-2.png")), QIcon::Normal, QIcon::On);
     //createFldAgentAction->setIcon(icon);
 
     actReportSummary = new QAction(tr("Report Summary"),this);
     actReportSummary->setObjectName("actReportSummary");
-    QObject::connect(actReportSummary, SIGNAL(triggered()), this, SLOT(addBand()));
+    connect(actReportSummary, SIGNAL(triggered()), this, SLOT(addBand()));
 
     actPageHeader = new QAction(tr("Page Header"),this);
     actPageHeader->setObjectName("actPageHeader");
-    QObject::connect(actPageHeader, SIGNAL(triggered()), this, SLOT(addBand()));
+    connect(actPageHeader, SIGNAL(triggered()), this, SLOT(addBand()));
 
     actPageFooter = new QAction(tr("Page Footer"),this);
     actPageFooter->setObjectName("actPageFooter");
-    QObject::connect(actPageFooter, SIGNAL(triggered()), this, SLOT(addBand()));
+    connect(actPageFooter, SIGNAL(triggered()), this, SLOT(addBand()));
 
     actMasterData = new QAction(tr("Master Data"),this);
     actMasterData->setObjectName("actMasterData");
-    QObject::connect(actMasterData, SIGNAL(triggered()), this, SLOT(addBand()));
+    connect(actMasterData, SIGNAL(triggered()), this, SLOT(addBand()));
 
     actMasterFooter = new QAction(tr("Master Footer"),this);
     actMasterFooter->setObjectName("actMasterFooter");
-    QObject::connect(actMasterFooter, SIGNAL(triggered()), this, SLOT(addBand()));
+    connect(actMasterFooter, SIGNAL(triggered()), this, SLOT(addBand()));
 
     actMasterHeader = new QAction(tr("Master Header"),this);
     actMasterHeader->setObjectName("actMasterHeader");
-    QObject::connect(actMasterHeader, SIGNAL(triggered()), this, SLOT(addBand()));
+    connect(actMasterHeader, SIGNAL(triggered()), this, SLOT(addBand()));
 
     QMenu *subBand = new QMenu(this);
     subBand->setObjectName("subBand");
@@ -317,8 +317,8 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent), ui(new Ui::MainW
     QToolButton * btn = qobject_cast<QToolButton *>(ui->toolBar_3->widgetForAction(ui->actionInsert_band));
     btn->setPopupMode(QToolButton::InstantPopup);
 
-    QObject::connect(subBand, SIGNAL(aboutToShow()), this, SLOT(clickOnTBtn()));
-    QObject::connect(ui->actPageSettings, SIGNAL(triggered()), this, SLOT(showPageSetting()));
+    connect(subBand, SIGNAL(aboutToShow()), this, SLOT(clickOnTBtn()));
+    connect(ui->actPageSettings, SIGNAL(triggered()), this, SLOT(showPageSetting()));
 
     //Menu for container
     contMenu = new QMenu(this);
@@ -497,8 +497,8 @@ void MainWindow::newReportPage() {
     repScrollArea->rootItem = rootItem;
     repScrollArea->icon = icon;
     repScrollArea->isShowGrid = ui->actShowGrid->isChecked();
-    QObject::connect(ui->actShowGrid, SIGNAL(triggered(bool)), repScrollArea, SLOT(showGrid(bool)));
-    QObject::connect(repScrollArea, SIGNAL(bandResing(int)), this, SLOT(bandResing(int)));
+    connect(ui->actShowGrid, SIGNAL(triggered(bool)), repScrollArea, SLOT(showGrid(bool)));
+    connect(repScrollArea, SIGNAL(bandResing(int)), this, SLOT(bandResing(int)));
     repScrollArea->actField = ui->actAddField;
 
     ui->tabWidget->addTab(repScrollArea,tr("Page %1").arg(ui->tabWidget->count()+1));
@@ -776,10 +776,10 @@ void MainWindow::openFile() {
                             }
                         }
 
-                        QObject::connect(contField, SIGNAL(delCont(QTreeWidgetItem *)), this, SLOT(delItemInTree(QTreeWidgetItem *)));
-                        QObject::connect(contField, SIGNAL(contChanged(bool)), ui->actSaveReport, SLOT(setEnabled(bool)));
-                        QObject::connect(contField, SIGNAL(inFocus(bool)), this, SLOT(setWidgetInFocus(bool)));
-                        QObject::connect(contField, SIGNAL(newGeometry(QRect, QRect)), this, SLOT(contPos(QRect, QRect)));
+                        connect(contField, SIGNAL(delCont(QTreeWidgetItem *)), this, SLOT(delItemInTree(QTreeWidgetItem *)));
+                        connect(contField, SIGNAL(contChanged(bool)), ui->actSaveReport, SLOT(setEnabled(bool)));
+                        connect(contField, SIGNAL(inFocus(bool)), this, SLOT(setWidgetInFocus(bool)));
+                        connect(contField, SIGNAL(newGeometry(QRect, QRect)), this, SLOT(contPos(QRect, QRect)));
                         newFeildTreeItem(contField,reportBand);
                     }
                     c = c.nextSibling();
@@ -1815,9 +1815,9 @@ void MainWindow::addField() {
     newContField->setMenu(contMenu);
     newContField->setCursor(QCursor(Qt::CrossCursor));
     newContField->setSelected(true);
-    QObject::connect(newContField, SIGNAL(delCont(QTreeWidgetItem *)), this, SLOT(delItemInTree(QTreeWidgetItem *)));
-    QObject::connect(newContField, SIGNAL(inFocus(bool)), this, SLOT(setWidgetInFocus(bool)));
-    QObject::connect(newContField, SIGNAL(newGeometry(QRect, QRect)), this, SLOT(contPos(QRect, QRect)));
+    connect(newContField, SIGNAL(delCont(QTreeWidgetItem *)), this, SLOT(delItemInTree(QTreeWidgetItem *)));
+    connect(newContField, SIGNAL(inFocus(bool)), this, SLOT(setWidgetInFocus(bool)));
+    connect(newContField, SIGNAL(newGeometry(QRect, QRect)), this, SLOT(contPos(QRect, QRect)));
     newContMoving = true;
 
     ui->actSaveReport->setEnabled(true);
@@ -1998,9 +1998,9 @@ void MainWindow::clipBoard() {
             generateName(newContField);
             newContList->append(newContField);
 
-            QObject::connect(newContField, SIGNAL(delCont(QTreeWidgetItem *)), this, SLOT(delItemInTree(QTreeWidgetItem *)));
-            QObject::connect(newContField, SIGNAL(inFocus(bool)), this, SLOT(setWidgetInFocus(bool)));
-            QObject::connect(newContField, SIGNAL(newGeometry(QRect, QRect)), this, SLOT(contPos(QRect, QRect)));
+            connect(newContField, SIGNAL(delCont(QTreeWidgetItem *)), this, SLOT(delItemInTree(QTreeWidgetItem *)));
+            connect(newContField, SIGNAL(inFocus(bool)), this, SLOT(setWidgetInFocus(bool)));
+            connect(newContField, SIGNAL(newGeometry(QRect, QRect)), this, SLOT(contPos(QRect, QRect)));
 
             newContField->setParent(band->contWidget);
             newContField->setMenu(contMenu);

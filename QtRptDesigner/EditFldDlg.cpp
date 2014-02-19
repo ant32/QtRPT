@@ -15,16 +15,16 @@ EditFldDlg::EditFldDlg(QWidget *parent) :  QDialog(parent), ui(new Ui::EditFldDl
     ui->setupUi(this);
 
     this->setStyleSheet("/**/");
-    QObject::connect(ui->btnLoadImage, SIGNAL(clicked()), this, SLOT(loadImage()));
-    QObject::connect(ui->btnAddVariable, SIGNAL(clicked()), this, SLOT(openProperty()));
-    QObject::connect(ui->rdPrinting, SIGNAL(toggled(bool)), this, SLOT(conditionalToggled(bool)));
-    QObject::connect(ui->rdTransparent, SIGNAL(toggled(bool)), this, SLOT(backGroundToggled(bool)));
-    QObject::connect(ui->edtCondition, SIGNAL(textEdited(const QString&)), this, SLOT(conditionChanged(const QString&)));
-    QObject::connect(ui->btnColorB, SIGNAL(clicked()), this, SLOT(chooseColor()));
-    QObject::connect(ui->btnColorF, SIGNAL(clicked()), this, SLOT(chooseColor()));
-    QObject::connect(ui->chkBold, SIGNAL(clicked()), this, SLOT(encodeHighLightingString()));
-    QObject::connect(ui->chkItalic, SIGNAL(clicked()), this, SLOT(encodeHighLightingString()));
-    QObject::connect(ui->chkUnderline, SIGNAL(clicked()), this, SLOT(encodeHighLightingString()));
+    connect(ui->btnLoadImage, SIGNAL(clicked()), this, SLOT(loadImage()));
+    connect(ui->btnAddVariable, SIGNAL(clicked()), this, SLOT(openProperty()));
+    connect(ui->rdPrinting, SIGNAL(toggled(bool)), this, SLOT(conditionalToggled(bool)));
+    connect(ui->rdTransparent, SIGNAL(toggled(bool)), this, SLOT(backGroundToggled(bool)));
+    connect(ui->edtCondition, SIGNAL(textEdited(const QString&)), this, SLOT(conditionChanged(const QString&)));
+    connect(ui->btnColorB, SIGNAL(clicked()), this, SLOT(chooseColor()));
+    connect(ui->btnColorF, SIGNAL(clicked()), this, SLOT(chooseColor()));
+    connect(ui->chkBold, SIGNAL(clicked()), this, SLOT(encodeHighLightingString()));
+    connect(ui->chkItalic, SIGNAL(clicked()), this, SLOT(encodeHighLightingString()));
+    connect(ui->chkUnderline, SIGNAL(clicked()), this, SLOT(encodeHighLightingString()));
 }
 
 void EditFldDlg::chooseColor() {

@@ -25,7 +25,7 @@ ReportBand::ReportBand(QWidget *parent, BandType type, QTreeWidgetItem *item) : 
     ui->conWidget->installEventFilter(this);
     ui->lblBandType->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     titleHeight = 14;
-    QObject::connect(ui->lblBandType, SIGNAL(clicked()), this, SLOT(setFocus()));
+    connect(ui->lblBandType, SIGNAL(clicked()), this, SLOT(setFocus()));
     mode = NONE;
     QString stl = "background: yellow;"
                   "border-top-left-radius: 10px;"
@@ -84,7 +84,7 @@ void ReportBand::setMenu(QMenu *menu_) {
     icon.addPixmap(QPixmap(QString::fromUtf8(":/images/delete.png")), QIcon::Normal, QIcon::On);
     actBandDel->setObjectName("actBandDel");
     actBandDel->setIcon(icon);
-    QObject::connect(actBandDel, SIGNAL(triggered()), this, SLOT(deleteLater()));
+    connect(actBandDel, SIGNAL(triggered()), this, SLOT(deleteLater()));
 
     QAction *sep = new QAction(this);
     sep->setSeparator(true);

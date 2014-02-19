@@ -38,13 +38,13 @@ void TContainerField::setMenu(QMenu *menu_) {
     QIcon icon;
     QAction *actContEdit = new QAction(tr("Edit"),this);
     actContEdit->setObjectName("actContEdit");
-    QObject::connect(actContEdit, SIGNAL(triggered()), this, SLOT(edit()));
+    connect(actContEdit, SIGNAL(triggered()), this, SLOT(edit()));
 
     QAction *actContDel = new QAction(tr("Delete"),this);
     icon.addPixmap(QPixmap(QString::fromUtf8(":/images/delete.png")), QIcon::Normal, QIcon::On);
     actContDel->setObjectName("actContDel");
     actContDel->setIcon(icon);
-    QObject::connect(actContDel, SIGNAL(triggered()), this, SLOT(deleteLater()));
+    connect(actContDel, SIGNAL(triggered()), this, SLOT(deleteLater()));
 
     menu->clear();
     menu->insertActions(0,menu_->actions());

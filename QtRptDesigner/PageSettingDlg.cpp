@@ -26,8 +26,8 @@ PageSettingDlg::PageSettingDlg(QWidget *parent) : QDialog(parent), ui(new Ui::Pa
         pageSetting.unit = 100;
         pageSetting.unitName = "Inch";
     }
-    QObject::connect(ui->rLandscape, SIGNAL(clicked()), this, SLOT(changeOrientation()));
-    QObject::connect(ui->rPortrait, SIGNAL(clicked()), this, SLOT(changeOrientation()));
+    connect(ui->rLandscape, SIGNAL(clicked()), this, SLOT(changeOrientation()));
+    connect(ui->rPortrait, SIGNAL(clicked()), this, SLOT(changeOrientation()));
 }
 
 void PageSettingDlg::showThis(PageSetting pageSetting) {

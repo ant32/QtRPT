@@ -176,7 +176,7 @@ ReportBand *RepScrollArea::m_addBand(QString bandName, BandType type, int m_heig
     ReportBand *reportBand = new ReportBand(ui->repWidget, type, item);
     reportBand->itemInTree = item;
     reportBand->setMenu(bandMenu);
-    QObject::connect(reportBand, SIGNAL(delBand(QTreeWidgetItem *)), m_mainWindow, SLOT(delItemInTree(QTreeWidgetItem *)));
+    connect(reportBand, SIGNAL(delBand(QTreeWidgetItem *)), m_mainWindow, SLOT(delItemInTree(QTreeWidgetItem *)));
 
     QRect r = reportBand->geometry();
     if (m_height != 0)
@@ -187,8 +187,8 @@ ReportBand *RepScrollArea::m_addBand(QString bandName, BandType type, int m_heig
 
     correctBandGeom();
 
-    QObject::connect(reportBand, SIGNAL(endResizing(QRect)), this, SLOT(bandResing(QRect)));
-    QObject::connect(reportBand, SIGNAL(inFocus(bool)), m_mainWindow, SLOT(setWidgetInFocus(bool)));
+    connect(reportBand, SIGNAL(endResizing(QRect)), this, SLOT(bandResing(QRect)));
+    connect(reportBand, SIGNAL(inFocus(bool)), m_mainWindow, SLOT(setWidgetInFocus(bool)));
     actField->setEnabled(allowField());
     return reportBand;
 }

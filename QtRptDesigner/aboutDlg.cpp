@@ -28,7 +28,7 @@ AboutDlg::AboutDlg(QWidget *parent) : QDialog(parent) {
 
     QPushButton *btnOK = new QPushButton(this);
     btnOK->setText("OK");
-    QObject::connect(btnOK, SIGNAL(clicked()), this, SLOT(close()));
+    connect(btnOK, SIGNAL(clicked()), this, SLOT(close()));
 
     QLabel *lab1 = new QLabel(this);
     lab1->setPixmap(QPixmap(":/images/MQueryLogo.png"));
@@ -39,7 +39,7 @@ AboutDlg::AboutDlg(QWidget *parent) : QDialog(parent) {
                   "<a href='https://sourceforge.net/projects/qtrpt/'>https://sourceforge.net/projects/qtrpt/</a>"+"<br>"+
                   tr("2012-2014 years");
     QLabel *lab2 = new QLabel(lbl, this);
-    QObject::connect(lab2, SIGNAL(linkActivated(const QString)), this, SLOT(openLink(const QString)));
+    connect(lab2, SIGNAL(linkActivated(const QString)), this, SLOT(openLink(const QString)));
 
     QHBoxLayout *hLayout2 = new QHBoxLayout;
     hLayout2->addWidget(lab1);
