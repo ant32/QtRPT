@@ -9,10 +9,7 @@ e-mail: aliks-os@yandex.ru
 #ifndef ABOUTDLG_H
 #define ABOUTDLG_H
 
-#include <QWidget>
 #include <QDialog>
-#include <QtGui>
-#include <QtWidgets>
 
 class AboutDlg : public QDialog {
     Q_OBJECT

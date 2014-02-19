@@ -10,10 +10,6 @@ e-mail: aliks-os@yandex.ru
 #define REPORTBAND_H
 
 #include <QWidget>
-#include <QtGui>
-#include <QObject>
-#include <QMouseEvent>
-#include <QtWidgets>
 #include <QTreeWidgetItem>
 #include "../CommonFiles/qlabelex.h"
 #include "tcontainerfield.h"

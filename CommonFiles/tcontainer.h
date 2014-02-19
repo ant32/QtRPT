@@ -2,11 +2,8 @@
 #define TCONTAINER_H
 
 #include <QWidget>
-#include <QMouseEvent>
-#include <QtGui>
-#include <QMenu>
 #include <QVBoxLayout>
-#include <QtWidgets>
+#include <QMenu>
 
 enum modes{
     NONE = 0,

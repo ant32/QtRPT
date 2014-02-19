@@ -8,6 +8,7 @@ e-mail: aliks-os@yandex.ru
 
 #include "ReportBand.h"
 #include "ui_ReportBand.h"
+#include <QKeyEvent>
 
 ReportBand::ReportBand(QWidget *parent, BandType type, QTreeWidgetItem *item) :  QWidget(parent), ui(new Ui::ReportBand) {
     ui->setupUi(this);

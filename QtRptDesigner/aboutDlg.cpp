@@ -7,6 +7,13 @@ e-mail: aliks-os@yandex.ru
 */
 
 #include "aboutDlg.h"
+#include <QApplication>
+#include <QDesktopWidget>
+#include <QPushButton>
+#include <QLabel>
+#include <QHBoxLayout>
+#include <QDesktopServices>
+#include <QUrl>
 
 AboutDlg::AboutDlg(QWidget *parent) : QDialog(parent) {
     this->setWindowTitle(tr("About QtRptDesiner"));

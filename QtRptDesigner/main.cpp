@@ -6,8 +6,11 @@ e-mail: aliks-os@yandex.ru
 2012-2014
 */
 
-#include <QApplication>
 #include "mainwindow.h"
+#include <QApplication>
+#include <QTextCodec>
+#include <QTranslator>
+#include <QSettings>
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);

@@ -10,7 +10,6 @@ e-mail: aliks-os@yandex.ru
 #define EDITFLDDLG_H
 
 #include <QDialog>
-#include <QtGui>
 #include "FldPropertyDlg.h"
 #include "tcontainerfield.h"
 //#include "mainwindow.h"

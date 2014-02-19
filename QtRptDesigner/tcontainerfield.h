@@ -9,15 +9,9 @@ e-mail: aliks-os@yandex.ru
 #ifndef TCONTAINERFIELD_H
 #define TCONTAINERFIELD_H
 
-#include <QtGui>
-#include <QLabel>
-#include <QVBoxLayout>
-#include <QMouseEvent>
-#include <QMenu>
 #include "ReportBand.h"
 #include "../CommonFiles/tcontainer.h"
 #include "EditFldDlg.h"
-#include <QTreeWidgetItem>
 
 enum FieldType {
     Text,

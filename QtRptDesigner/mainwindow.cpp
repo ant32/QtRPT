@@ -8,6 +8,14 @@ e-mail: aliks-os@yandex.ru
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QToolButton>
+#include <QSettings>
+#include <QMessageBox>
+#include <QFileDialog>
+#include <QColorDialog>
+#include <QTextStream>
+#include <QBuffer>
+#include <QMouseEvent>
 
 EditorDelegate::EditorDelegate(QObject *parent) : QItemDelegate(parent) {
     QObject::connect(this, SIGNAL(closeEditor(QWidget *, QAbstractItemDelegate::EndEditHint)),

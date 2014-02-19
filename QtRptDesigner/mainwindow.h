@@ -8,12 +8,11 @@ e-mail: aliks-os@yandex.ru
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtWidgets>
 #include <QMainWindow>
-#include <QObject>
-#include <QWidget>
-#include <QtGui>
 #include <QDomDocument>
+#include <QItemDelegate>
+#include <QListWidget>
+#include <QFontComboBox>
 #include "PageSettingDlg.h"
 #include "ReportBand.h"
 #include "tcontainerfield.h"

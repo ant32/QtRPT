@@ -1,4 +1,7 @@
 #include "tcontainer.h"
+#include <QApplication>
+#include <QPainter>
+#include <QMouseEvent>
 
 TContainer::TContainer(QWidget *parent, QPoint p, QWidget *cWidget) : QWidget(parent) {
     mode = NONE;

@@ -10,9 +10,6 @@ e-mail: aliks-os@yandex.ru
 #define LANGUAGEDLG_H
 
 #include <QDialog>
-#include <QtGui>
-#include <QtCore>
-#include <QtWidgets>
 
 namespace Ui {
 class LanguageDlg;

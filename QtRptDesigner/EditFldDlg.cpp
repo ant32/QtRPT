@@ -8,6 +8,8 @@ e-mail: aliks-os@yandex.ru
 
 #include "EditFldDlg.h"
 #include "ui_EditFldDlg.h"
+#include <QColorDialog>
+#include <QFileDialog>
 
 EditFldDlg::EditFldDlg(QWidget *parent) :  QDialog(parent), ui(new Ui::EditFldDlg) {
     ui->setupUi(this);

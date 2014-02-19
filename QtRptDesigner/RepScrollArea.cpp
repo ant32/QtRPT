@@ -8,6 +8,8 @@ e-mail: aliks-os@yandex.ru
 
 #include "RepScrollArea.h"
 #include "ui_RepScrollArea.h"
+#include <QSettings>
+#include <QPainter>
 
 RepScrollArea::RepScrollArea(QWidget *parent) :
                             QScrollArea(parent), ui(new Ui::RepScrollArea) {

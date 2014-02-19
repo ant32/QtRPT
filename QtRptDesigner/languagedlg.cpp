@@ -8,6 +8,8 @@ e-mail: aliks-os@yandex.ru
 
 #include "languagedlg.h"
 #include "ui_languagedlg.h"
+#include <QSettings>
+#include <QMessageBox>
 
 LanguageDlg::LanguageDlg(QWidget *parent) :
     QDialog(parent),
