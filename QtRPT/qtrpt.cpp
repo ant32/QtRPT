@@ -597,7 +597,7 @@ void QtRPT::setPageSettings(QPrinter *printer, QDomElement docElem) {
     mr = docElem.attribute("marginsRight").toInt();
     mt = docElem.attribute("marginsTop").toInt();
     mb = docElem.attribute("marginsBottom").toInt();
-    int unit = docElem.attribute("unit").toInt();
+    qreal unit = docElem.attribute("unit").toInt();
     QString unitName = docElem.attribute("unitName");
     if (unit == 0) // keep backward compatibility
         unit = 40;
