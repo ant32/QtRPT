@@ -28,6 +28,7 @@ bool QtRPT::loadReport(QString fileName) {
         return false;
     }
     file.close();
+    pageSettingsSet = false;
     return true;
 }
 
@@ -565,6 +566,8 @@ void QtRPT::drawReport(QPrinter *printer) {
 #ifdef QT_NO_PRINTER
     Q_UNUSED(printer);
 #else
+    if (! pageSettingsSet)
+        setPageSettings(printer);
     painter.begin(printer);
     /*Make a two pass report
      *First pass calculate total pages
@@ -590,7 +593,8 @@ void QtRPT::drawReport(QPrinter *printer) {
 #endif
 }
 
-void QtRPT::setPageSettings(QPrinter *printer, QDomElement docElem) {
+void QtRPT::setPageSettings(QPrinter *printer) {
+    QDomElement docElem = xmlDoc->documentElement().childNodes().at(0).toElement();
     ph = docElem.attribute("pageHeight").toInt();
     pw = docElem.attribute("pageWidth").toInt();
     ml = docElem.attribute("marginsLeft").toInt();
@@ -603,9 +607,12 @@ void QtRPT::setPageSettings(QPrinter *printer, QDomElement docElem) {
         unit = 40;
     if (unitName == "" || unitName == "cm"){
         unit /= 10; // convert cm to mm
+        printer->setPaperSize(QSizeF(pw/unit, ph/unit), QPrinter::Millimeter);
         printer->setPageMargins(ml/unit+0.01, mt/unit+0.01, mr/unit+0.01, mb/unit+0.01, QPrinter::Millimeter);
-    }else //inch
+    }else{ //inch
+        printer->setPaperSize(QSizeF(pw/unit, ph/unit), QPrinter::Inch);
         printer->setPageMargins(ml/unit+0.001, mt/unit+0.001, mr/unit+0.001, mb/unit+0.001, QPrinter::Inch);
+    }
 
     int orientation = docElem.attribute("orientation").toInt();
     if (orientation == 1) {
@@ -625,11 +632,10 @@ void QtRPT::setPageSettings(QPrinter *printer, QDomElement docElem) {
     reportSummary = getBand(ReportSummary, docElem);
     masterData = getBand(MasterData, docElem);
     masterHeader = getBand(MasterHeader, docElem);
+    pageSettingsSet = true;
 }
 
 void QtRPT::processReport(QPrinter *printer, bool draw, int pageReport) {
-    QDomElement docElem = xmlDoc->documentElement().childNodes().at(pageReport).toElement();
-    setPageSettings(printer, docElem);
     int y = 0;
 
     drawBackground(painter);

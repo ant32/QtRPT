@@ -52,6 +52,7 @@ public:
     void printExec();
     //void setCallbackFunc(void (*func)(int &recNo, QString &paramName, QVariant &paramValue));
     void setBackgroundImage(QPixmap image);
+    void setPageSettings(QPrinter *printer);
 
 private:    
 
@@ -69,6 +70,7 @@ private:
     int mb;
     int curPage;
     int totalPage;
+    bool pageSettingsSet;
     QPrintPreviewWidget *pr;
     QList<QAction *> lst ;
     QDomNode reportTitle,pageHeader,masterData,pageFooter,reportSummary,masterFooter,masterHeader;
@@ -94,7 +96,6 @@ private:
     void processRTitle(int &y, bool draw);
     void processMHeader(int &y, bool draw);
     void processMasterData(QPrinter *printer, int &y, bool draw, int pageReport);
-    void setPageSettings(QPrinter *printer, QDomElement docElem);
     void drawBackground(QPainter &painter);
     bool isFieldVisible(const QDomElement &e);
     QVariant processHighligthing(QDomElement e, HiType type);    
