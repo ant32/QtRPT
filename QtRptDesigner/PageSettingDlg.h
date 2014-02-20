@@ -43,7 +43,8 @@ private:
 
 private slots:
     void changeOrientation();
-    void on_sizeCombo_currentIndexChanged(const QString &arg1);
+    void on_sizeCombo_currentIndexChanged(int index);
+    void on_unitCombo_currentIndexChanged(int index);
 };
 
 #endif // PAGESETTINGDLG_H

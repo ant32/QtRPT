@@ -26,6 +26,7 @@ RepScrollArea::RepScrollArea(QWidget *parent) :
     settings.endGroup();
     if (measurement == "cm" || measurement == ""){
         pageSetting.unit = 40;
+        pageSetting.unitName = "cm";
         pageSetting.marginsLeft     = 40;
         pageSetting.marginsRight    = 40;
         pageSetting.marginsTop      = 40;
@@ -34,6 +35,7 @@ RepScrollArea::RepScrollArea(QWidget *parent) :
         pageSetting.pageHeight      = 1188;
     }else if (measurement == "Inch"){
         pageSetting.unit = 100;
+        pageSetting.unitName = "Inch";
         pageSetting.marginsLeft     = 25;
         pageSetting.marginsRight    = 25;
         pageSetting.marginsTop      = 25;
