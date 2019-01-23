@@ -14,6 +14,7 @@ class QWidget;
 #include <QDomDocument>
 #include <QScriptEngine>
 #include <QPrintPreviewWidget>
+#include <QDebug>
 
 enum BandType {
     ReportTitle,
