@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4){
     DEFINES += HAVE_QT5
 }
 
-TARGET = QtRPT
+TARGET = QtRPT1
 TEMPLATE = app
 
 
